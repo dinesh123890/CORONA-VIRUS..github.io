@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-cast-api-enabled="true">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style name="www-roboto" nonce="PnAhagHc2ZYHjquK+ezr/A">
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu72xKOzY.woff2)format('woff2');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu5mxKOzY.woff2)format('woff2');
+            unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7mxKOzY.woff2)format('woff2');
+            unicode-range: U+1F00-1FFF;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4WxKOzY.woff2)format('woff2');
+            unicode-range: U+0370-03FF;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7WxKOzY.woff2)format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7GxKOzY.woff2)format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2)format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+    <script name="www-roboto" nonce="ClbyMdfcK9HnpCTwyaNU5A">
+        if (document.fonts && document.fonts.load) {
+            document.fonts.load("400 10pt Roboto", "E");
+            document.fonts.load("500 10pt Roboto", "E");
+        }
+    </script>
+    <link rel="stylesheet" href="/s/player/f3c4e04d/www-player-webp.css" name="www-player" nonce="PnAhagHc2ZYHjquK+ezr/A">
+    <style nonce="PnAhagHc2ZYHjquK+ezr/A">
+        html {
+            overflow: hidden;
+        }
+
+        body {
+            font: 12px Roboto, Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            position: absolute;
+            margin: 0;
+            padding: 0;
+        }
+
+        #player {
+            width: 100%;
+            height: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+        }
+
+        h3 {
+            margin-top: 6px;
+            margin-bottom: 3px;
+        }
+
+        .player-unavailable {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 25px;
+            font-size: 13px;
+            background: url(/img/meh7.png) 50% 65% no-repeat;
+        }
+
+        .player-unavailable .message {
+            text-align: left;
+            margin: 0 -5px 15px;
+            padding: 0 5px 14px;
+            border-bottom: 1px solid #888;
+            font-size: 19px;
+            font-weight: normal;
+        }
+
+        .player-unavailable a {
+            color: #167ac6;
+            text-decoration: none;
+        }
+    </style>
+    <script nonce="ClbyMdfcK9HnpCTwyaNU5A">
+        var ytcsi = {
+            gt: function(n) {
+                n = (n || "") + "data_";
+                return ytcsi[n] || (ytcsi[n] = {
+                    tick: {},
+                    info: {}
+                })
+            },
+            now: window.performance && window.performance.timing && window.performance.now && window.performance.timing.navigationStart ? function() {
+                return window.performance.timing.navigationStart + window.performance.now()
+            } : function() {
+                return (new Date).getTime()
+            },
+            tick: function(l, t, n) {
+                var ticks = ytcsi.gt(n).tick;
+                var v = t || ytcsi.now();
+                if (ticks[l]) {
+                    ticks["_" + l] = ticks["_" + l] || [ticks[l]];
+                    ticks["_" + l].push(v)
+                }
+                ticks[l] = v
+            },
+            info: function(k,
+                v, n) {
+                ytcsi.gt(n).info[k] = v
+            },
+            setStart: function(s, t, n) {
+                ytcsi.info("yt_sts", s, n);
+                ytcsi.tick("_start", t, n)
+            }
+        };
+        (function(w, d) {
+            ytcsi.setStart("dhs", w.performance ? w.performance.timing.responseStart : null);
+            var isPrerender = (d.visibilityState || d.webkitVisibilityState) == "prerender";
+            var vName = !d.visibilityState && d.webkitVisibilityState ? "webkitvisibilitychange" : "visibilitychange";
+            if (isPrerender) {
+                ytcsi.info("prerender", 1);
+                var startTick = function() {
+                    ytcsi.setStart("dhs");
+                    d.removeEventListener(vName, startTick)
+                };
+                d.addEventListener(vName, startTick, false)
+            }
+            if (d.addEventListener) d.addEventListener(vName, function() {
+                    ytcsi.tick("vc")
+                },
+                false);
+
+            function isGecko() {
+                if (!w.navigator) return false;
+                try {
+                    if (w.navigator.userAgentData && w.navigator.userAgentData.brands && w.navigator.userAgentData.brands.length) {
+                        var brands = w.navigator.userAgentData.brands;
+                        for (var i = 0; i < brands.length; i++)
+                            if (brands[i] && brands[i].brand === "Firefox") return true;
+                        return false
+                    }
+                } catch (e) {
+                    setTimeout(function() {
+                        throw e;
+                    })
+                }
+                if (!w.navigator.userAgent) return false;
+                var ua = w.navigator.userAgent;
+                return ua.indexOf("Gecko") > 0 && ua.toLowerCase().indexOf("webkit") < 0 && ua.indexOf("Edge") <
+                    0 && ua.indexOf("Trident") < 0 && ua.indexOf("MSIE") < 0
+            }
+            if (isGecko()) {
+                var isHidden = (d.visibilityState || d.webkitVisibilityState) == "hidden";
+                if (isHidden) ytcsi.tick("vc")
+            }
+            var slt = function(el, t) {
+                setTimeout(function() {
+                    var n = ytcsi.now();
+                    el.loadTime = n;
+                    if (el.slt) el.slt()
+                }, t)
+            };
+            w.__ytRIL = function(el) {
+                if (!el.getAttribute("data-thumb"))
+                    if (w.requestAnimationFrame) w.requestAnimationFrame(function() {
+                        slt(el, 0)
+                    });
+                    else slt(el, 16)
+            }
+        })(window, document);
+    </script>
+    <script nonce="ClbyMdfcK9HnpCTwyaNU5A">
+        var ytcfg = {
+            d: function() {
+                return window.yt && yt.config_ || ytcfg.data_ || (ytcfg.data_ = {})
+            },
+            get: function(k, o) {
+                return k in ytcfg.d() ? ytcfg.d()[k] : o
+            },
+            set: function() {
+                var a = arguments;
+                if (a.length > 1) ytcfg.d()[a[0]] = a[1];
+                else
+                    for (var k in a[0]) ytcfg.d()[k] = a[0][k]
+            }
+        };
+        ytcfg.set({
+            "EVENT_ID": "mwu7YburMtC33LUPucmJ8Ak",
+            "EXPERIMENT_FLAGS": {
+                "allow_skip_networkless": true,
+                "autoescape_tempdata_url": true,
+                "botguard_periodic_refresh": true,
+                "cancel_pending_navs": true,
+                "clear_user_partitioned_ls": true,
+                "csi_on_gel": true,
+                "deprecate_pair_servlet_enabled": true,
+                "deprecate_two_way_binding_child": true,
+                "deprecate_two_way_binding_parent": true,
+                "desktop_client_release": true,
+                "desktop_image_cta_no_background": true,
+                "desktop_notification_high_priority_ignore_push": true,
+                "desktop_notification_set_title_bar": true,
+                "desktop_sparkles_light_cta_button": true,
+                "desktop_text_ads_gray_visurl": true,
+                "disable_child_node_auto_formatted_strings": true,
+                "disable_simple_mixed_direction_formatted_strings": true,
+                "disable_thumbnail_preloading": true,
+                "enable_docked_chat_messages": true,
+                "enable_gray_visurl": true,
+                "enable_mixed_direction_formatted_strings": true,
+                "enable_share_panel_page_as_screen_layer": true,
+                "enable_sli_flush": true,
+                "enable_watch_next_pause_autoplay_lact": true,
+                "enable_ypc_spinners": true,
+                "export_networkless_options": true,
+                "forward_domain_admin_state_on_embeds": true,
+                "gfeedback_for_signed_out_users_enabled": true,
+                "html5_enable_single_video_vod_ivar_on_pacf": true,
+                "html5_enable_video_overlay_on_inplayer_slot_for_tv": true,
+                "html5_pacf_enable_dai": true,
+                "is_browser_support_for_webcam_streaming": true,
+                "kevlar_dropdown_fix": true,
+                "kevlar_gel_error_routing": true,
+                "kevlar_guide_refresh": true,
+                "live_chat_increased_min_height": true,
+                "log_vis_on_tab_change": true,
+                "log_web_endpoint_to_layer": true,
+                "mdx_enable_privacy_disclosure_ui": true,
+                "mdx_load_cast_api_bootstrap_script": true,
+                "no_sub_count_on_sub_button": true,
+                "nwl_throttling_race_fix": true,
+                "nwl_trigger_throttle_after_reset": true,
+                "omit_innertube_api_key_for_bearer_auth_header": true,
+                "pageid_as_header_web": true,
+                "pes_migrate_association_data": true,
+                "polymer_bad_build_labels": true,
+                "polymer_verifiy_app_state": true,
+                "qoe_send_and_write": true,
+                "screen_manager_log_servlet_ei": true,
+                "service_worker_enabled": true,
+                "service_worker_push_enabled": true,
+                "service_worker_push_home_page_prompt": true,
+                "service_worker_push_watch_page_prompt": true,
+                "shorten_initial_gel_batch_timeout": true,
+                "state_machine_dynamic_events_lifecycles": true,
+                "suppress_error_204_logging": true,
+                "use_document_lifecycles": true,
+                "use_screen_manager_util": true,
+                "use_undefined_csn_any_layer": true,
+                "use_watch_fragments2": true,
+                "vss_final_ping_send_and_write": true,
+                "vss_playback_use_send_and_write": true,
+                "warm_load_nav_start_web": true,
+                "web_always_load_chat_support": true,
+                "web_api_url": true,
+                "web_dedupe_ve_grafting": true,
+                "web_enable_ad_signals_in_it_context": true,
+                "web_fetch_promise_cleanup_killswitch": true,
+                "web_gel_timeout_cap": true,
+                "web_yt_config_context": true,
+                "ytidb_is_supported_cache_success_result": true,
+                "ytidb_stop_transaction_commit": true,
+                "addto_ajax_log_warning_fraction": 0.1,
+                "autoplay_pause_by_lact_sampling_fraction": 0.0,
+                "log_window_onerror_fraction": 0.1,
+                "web_system_health_fraction": 0.01,
+                "ytidb_transaction_ended_event_rate_limit": 0.02,
+                "autoplay_pause_by_lact_sec": 0,
+                "botguard_async_snapshot_timeout_ms": 3000,
+                "check_navigator_accuracy_timeout_ms": 0,
+                "initial_gel_batch_timeout": 2000,
+                "leader_election_check_interval": 9000,
+                "leader_election_lease_ttl": 10000,
+                "leader_election_renewal_interval": 6000,
+                "log_web_meta_interval_ms": 0,
+                "network_polling_interval": 30000,
+                "prefetch_comments_ms_after_video": 0,
+                "service_worker_push_logged_out_prompt_watches": -1,
+                "service_worker_push_prompt_cap": -1,
+                "service_worker_push_prompt_delay_microseconds": 3888000000000,
+                "watch_next_pause_autoplay_lact_sec": 4500,
+                "web_foreground_heartbeat_interval_ms": 28000,
+                "web_gel_debounce_ms": 10000,
+                "web_logging_max_batch": 100,
+                "ytidb_remake_db_retries": 1,
+                "ytidb_reopen_db_retries": 1,
+                "cb_v2_uxe": "23983171",
+                "embeds_web_synth_ch_headers_banned_urls_regex": "",
+                "live_chat_unicode_emoji_json_url": "https://www.gstatic.com/youtube/img/emojis/emojis-svg-8.json",
+                "service_worker_push_force_notification_prompt_tag": "1",
+                "service_worker_scope": "/",
+                "web_client_version_override": "",
+                "kevlar_command_handler_command_banlist": [],
+                "web_op_continuation_type_banlist": [],
+                "web_op_endpoint_banlist": [],
+                "web_op_signal_type_banlist": []
+            },
+            "GAPI_HINT_PARAMS": "m;/_/scs/abc-static/_/js/k\u003dgapi.gapi.en.hvE_rrhCzPE.O/d\u003d1/rs\u003dAHpOoo-98F2Gk-siNaIBZOtcWfXQWKdTpQ/m\u003d__features__",
+            "GAPI_HOST": "https://apis.google.com",
+            "GAPI_LOCALE": "en_US",
+            "GL": "IN",
+            "HL": "en",
+            "HTML_LANG": "en",
+            "INNERTUBE_API_KEY": "AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8",
+            "INNERTUBE_API_VERSION": "v1",
+            "INNERTUBE_CLIENT_NAME": "WEB_EMBEDDED_PLAYER",
+            "INNERTUBE_CLIENT_VERSION": "1.20211214.00.00",
+            "INNERTUBE_CONTEXT": {
+                "client": {
+                    "hl": "en",
+                    "gl": "IN",
+                    "remoteHost": "183.83.170.249",
+                    "deviceMake": "",
+                    "deviceModel": "",
+                    "visitorData": "CgtwVEo0TjdCRTFwMCibl-yNBg%3D%3D",
+                    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36,gzip(gfe)",
+                    "clientName": "WEB_EMBEDDED_PLAYER",
+                    "clientVersion": "1.20211214.00.00",
+                    "osName": "Windows",
+                    "osVersion": "10.0",
+                    "originalUrl": "https://www.youtube.com/embed/PSnSo9kYlH4",
+                    "platform": "DESKTOP",
+                    "clientFormFactor": "UNKNOWN_FORM_FACTOR",
+                    "configInfo": {
+                        "appInstallData": "CJuX7I0GELfLrQUQveutBRC7x_0SENvrrQUQkdetBRDYvq0F"
+                    },
+                    "browserName": "Chrome",
+                    "browserVersion": "96.0.4664.110"
+                },
+                "user": {
+                    "lockedSafetyMode": false
+                },
+                "request": {
+                    "useSsl": true
+                },
+                "clickTracking": {
+                    "clickTrackingParams": "IhMI++SJr4Xo9AIV0Bu3AB25ZAKe"
+                }
+            },
+            "INNERTUBE_CONTEXT_CLIENT_NAME": 56,
+            "INNERTUBE_CONTEXT_CLIENT_VERSION": "1.20211214.00.00",
+            "INNERTUBE_CONTEXT_GL": "IN",
+            "INNERTUBE_CONTEXT_HL": "en",
+            "LATEST_ECATCHER_SERVICE_TRACKING_PARAMS": {
+                "client.name": "WEB_EMBEDDED_PLAYER"
+            },
+            "SERVER_NAME": "WebFE",
+            "SESSION_INDEX": "",
+            "VISITOR_DATA": "CgtwVEo0TjdCRTFwMCibl-yNBg%3D%3D",
+            "WEB_PLAYER_CONTEXT_CONFIGS": {
+                "WEB_PLAYER_CONTEXT_CONFIG_ID_EMBEDDED_PLAYER": {
+                    "rootElementId": "movie_player",
+                    "jsUrl": "/s/player/f3c4e04d/player_ias.vflset/en_US/base.js",
+                    "cssUrl": "/s/player/f3c4e04d/www-player-webp.css",
+                    "contextId": "WEB_PLAYER_CONTEXT_CONFIG_ID_EMBEDDED_PLAYER",
+                    "eventLabel": "embedded",
+                    "contentRegion": "IN",
+                    "hl": "en_US",
+                    "hostLanguage": "en",
+                    "innertubeApiKey": "AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8",
+                    "innertubeApiVersion": "v1",
+                    "innertubeContextClientVersion": "1.20211214.00.00",
+                    "device": {
+                        "brand": "",
+                        "model": "",
+                        "browser": "Chrome",
+                        "browserVersion": "96.0.4664.110",
+                        "os": "Windows",
+                        "osVersion": "10.0",
+                        "platform": "DESKTOP",
+                        "interfaceName": "WEB_EMBEDDED_PLAYER",
+                        "interfaceVersion": "1.20211214.00.00"
+                    },
+                    "serializedExperimentIds": "23983296,24001373,24002022,24002025,24004644,24007246,24080738,24082661,24129402,24134463,24141079,24146886",
+                    "serializedExperimentFlags": "ad_pod_disable_companion_persist_ads_quality\u003dtrue\u0026addto_ajax_log_warning_fraction\u003d0.1\u0026align_ad_to_video_player_lifecycle_for_bulleit\u003dtrue\u0026allow_live_autoplay\u003dtrue\u0026allow_poltergust_autoplay\u003dtrue\u0026allow_skip_networkless\u003dtrue\u0026autoplay_time\u003d10000\u0026autoplay_time_for_fullscreen\u003d-1\u0026autoplay_time_for_music_content\u003d-1\u0026autoplay_time_for_music_content_after_autoplayed_video\u003d-1\u0026bg_vm_reinit_threshold\u003d7200000\u0026botguard_async_snapshot_timeout_ms\u003d3000\u0026cb_v2_uxe\u003d23983171\u0026check_ad_ui_status_for_mweb_safari\u003dtrue\u0026check_navigator_accuracy_timeout_ms\u003d0\u0026clear_user_partitioned_ls\u003dtrue\u0026csi_on_gel\u003dtrue\u0026dash_manifest_version\u003d5\u0026debug_bandaid_hostname\u003d\u0026debug_sherlog_username\u003d\u0026delay_ads_gvi_call_on_bulleit_living_room_ms\u003d0\u0026deprecate_pair_servlet_enabled\u003dtrue\u0026deprecate_two_way_binding_child\u003dtrue\u0026deprecate_two_way_binding_parent\u003dtrue\u0026desktop_image_cta_no_background\u003dtrue\u0026desktop_player_button_tooltip_with_shortcut\u003dtrue\u0026desktop_sparkles_light_cta_button\u003dtrue\u0026desktop_text_ads_gray_visurl\u003dtrue\u0026disable_channel_id_check_for_suspended_channels\u003dtrue\u0026disable_child_node_auto_formatted_strings\u003dtrue\u0026disable_mdx_connection_in_mdx_module_for_music_web\u003dtrue\u0026disable_new_pause_state3\u003dtrue\u0026disable_rounding_ad_notify\u003dtrue\u0026disable_simple_mixed_direction_formatted_strings\u003dtrue\u0026disable_thumbnail_preloading\u003dtrue\u0026embeds_enable_autoplayblocked_ping_fix\u003dtrue\u0026embeds_enable_embed_module\u003dtrue\u0026embeds_enable_iframe_apis_through_oneplatform\u003dtrue\u0026embeds_enable_intersection_observer_v2\u003dtrue\u0026embeds_enable_mobile_custom_controls\u003dtrue\u0026embeds_impression_link\u003dtrue\u0026embeds_web_synth_ch_headers_banned_urls_regex\u003d\u0026enable_ad_break_end_time_on_pacf_tvhtml5\u003dtrue\u0026enable_cast_for_web_unplugged\u003dtrue\u0026enable_cast_on_music_web\u003dtrue\u0026enable_client_page_id_header_for_first_party_pings\u003dtrue\u0026enable_cookie_reissue_iframe\u003dtrue\u0026enable_eviction_protection_for_bulleit\u003dtrue\u0026enable_fully_expanded_clip_range_in_progress_bar\u003dtrue\u0026enable_gray_visurl\u003dtrue\u0026enable_live_premiere_web_player_indicator\u003dtrue\u0026enable_mixed_direction_formatted_strings\u003dtrue\u0026enable_new_paid_product_placement\u003dtrue\u0026enable_share_panel_page_as_screen_layer\u003dtrue\u0026enable_sli_flush\u003dtrue\u0026enable_survey_ads_on_ytv_lr\u003dtrue\u0026enable_svg_mode_on_embed_mobile\u003dtrue\u0026enable_vsp\u003dtrue\u0026enable_web_media_session_metadata_fix\u003dtrue\u0026error_message_for_gsuite_network_restrictions\u003dtrue\u0026export_networkless_options\u003dtrue\u0026external_fullscreen_with_edu\u003dtrue\u0026fast_autonav_in_background\u003dtrue\u0026fix_ads_tracking_for_swf_config_deprecation_mweb\u003dtrue\u0026forward_domain_admin_state_on_embeds\u003dtrue\u0026gvi_channel_client_screen\u003dtrue\u0026h5_csi_seek_latency_action_sampling\u003d0.1\u0026hfr_dropped_framerate_fallback_threshold\u003d0\u0026html5_ad_timeout_ms\u003d0\u0026html5_ads_preroll_lock_timeout_delay_ms\u003d15000\u0026html5_allow_chromecast_opus\u003dtrue\u0026html5_allow_missing_ad_duration_in_player_vars\u003dtrue\u0026html5_allow_video_keyframe_without_audio\u003dtrue\u0026html5_allowable_liveness_drift_chunks\u003d2\u0026html5_attach_num_random_bytes_to_bandaid\u003d0\u0026html5_autonav_cap_idle_secs\u003d0\u0026html5_autonav_quality_cap\u003d720\u0026html5_autoplay_default_quality_cap\u003d0\u0026html5_av1_thresh\u003d1080\u0026html5_av1_thresh_arm\u003d240\u0026html5_av1_thresh_hcc\u003d1080\u0026html5_av1_thresh_lcc\u003d480\u0026html5_background_cap_idle_secs\u003d60\u0026html5_background_quality_cap\u003d360\u0026html5_block_pip_safari_delay\u003d0\u0026html5_cancel_presenting_in_loadVideo\u003dtrue\u0026html5_check_ad_position_and_reset_on_new_ad_playback_csi\u003dtrue\u0026html5_check_next_resource_for_retry_delay\u003dtrue\u0026html5_check_segnum_discontinuity\u003dtrue\u0026html5_clear_video_data_on_dispose\u003dtrue\u0026html5_consistent_innertube_transport_service\u003dtrue\u0026html5_crypto_period_secs_from_emsg\u003dtrue\u0026html5_de_dupe_content_video_loads_in_lifecycle_api\u003dtrue\u0026html5_deadzone_multiplier\u003d1.0\u0026html5_decode_to_texture_cap\u003dtrue\u0026html5_decoder_freeze_timeout_delay_ms\u003d0\u0026html5_default_ad_gain\u003d0.5\u0026html5_default_quality_cap\u003d0\u0026html5_delay_initial_loading\u003dtrue\u0026html5_delayed_retry_count\u003d1\u0026html5_delayed_retry_delay_ms\u003d5000\u0026html5_deprecate_video_tag_pool\u003dtrue\u0026html5_desktop_vr180_allow_panning\u003dtrue\u0026html5_df_downgrade_thresh\u003d0.2\u0026html5_disable_codec_on_errors_with_exp_backoff\u003dtrue\u0026html5_disable_move_pssh_to_moov\u003dtrue\u0026html5_disable_non_contiguous\u003dtrue\u0026html5_disable_reset_on_append_error\u003dtrue\u0026html5_drm_cpi_license_key\u003dtrue\u0026html5_dynamic_av1_hybrid_threshold\u003dtrue\u0026html5_enable_ac3\u003dtrue\u0026html5_enable_client_hints_override\u003dtrue\u0026html5_enable_cobalt_xhr\u003dtrue\u0026html5_enable_deferred_triggers_on_error\u003dtrue\u0026html5_enable_eac3\u003dtrue\u0026html5_enable_embedded_player_visibility_signals\u003dtrue\u0026html5_enable_hdr_on_macos\u003dtrue\u0026html5_enable_non_notify_composite_vod_lsar_pacf\u003dtrue\u0026html5_enable_non_notify_composite_vod_lsar_pacf_tv\u003dtrue\u0026html5_enable_player_bytes_vod_survey_in_pacf_for_tv\u003dtrue\u0026html5_enable_server_stitched_alr\u003dtrue\u0026html5_enable_single_video_vod_ivar_on_pacf\u003dtrue\u0026html5_enable_single_video_vod_ivar_on_pacf_tv\u003dtrue\u0026html5_enable_tvos_encrypted_vp9\u003dtrue\u0026html5_enable_video_overlay_on_inplayer_slot_for_tv\u003dtrue\u0026html5_enable_vod_survey_in_pacf_for_web\u003dtrue\u0026html5_encourage_array_coalescing\u003dtrue\u0026html5_exile_on_drm_fatal\u003dtrue\u0026html5_expanded_max_vss_pings\u003dtrue\u0026html5_failure_retry_limit\u003d0\u0026html5_fix_csi_event_order_in_pacf\u003dtrue\u0026html5_fludd_suspend\u003dtrue\u0026html5_gapless_ad_byterate_multiplier\u003d1.6\u0026html5_gapless_ended_transition_buffer_ms\u003d200\u0026html5_gapless_max_played_ranges\u003d12\u0026html5_gapless_no_requests_after_lock\u003dtrue\u0026html5_gapless_preloading\u003dtrue\u0026html5_gapless_seek_tolerance_secs\u003d3.0\u0026html5_gl_fps_threshold\u003d0\u0026html5_hack_gapless_init\u003dtrue\u0026html5_hdcp_probing_stream_url\u003d\u0026html5_health_to_gel\u003dtrue\u0026html5_heartbeat_set_ended\u003dtrue\u0026html5_hfr_quality_cap\u003d0\u0026html5_idle_rate_limit_ms\u003d0\u0026html5_ignore_bad_bitrates\u003dtrue\u0026html5_in_buffer_ptl\u003dtrue\u0026html5_in_buffer_ptl_timeout_ms\u003d2000\u0026html5_inline_quality_cap\u003d480\u0026html5_innertube_heartbeats_for_fairplay\u003dtrue\u0026html5_innertube_heartbeats_for_playready\u003dtrue\u0026html5_innertube_heartbeats_for_widevine\u003dtrue\u0026html5_ios4_seek_above_zero\u003dtrue\u0026html5_ios7_force_play_on_stall\u003dtrue\u0026html5_ios_force_seek_to_zero_on_stop\u003dtrue\u0026html5_jumbo_mobile_subsegment_readahead_target\u003d3.0\u0026html5_jumbo_ull_nonstreaming_mffa_ms\u003d4000\u0026html5_jumbo_ull_subsegment_readahead_target\u003d1.3\u0026html5_license_constraint_delay\u003d5000\u0026html5_live_abr_head_miss_fraction\u003d0.0\u0026html5_live_abr_repredict_fraction\u003d0.0\u0026html5_live_low_latency_bandwidth_window\u003d0.0\u0026html5_live_normal_latency_bandwidth_window\u003d0.0\u0026html5_live_quality_cap\u003d0\u0026html5_live_ultra_low_latency_bandwidth_window\u003d0.0\u0026html5_log_all_playback_attempts\u003dtrue\u0026html5_log_audio_abr\u003dtrue\u0026html5_log_experiment_id_from_player_response_to_ctmp\u003d\u0026html5_log_live_discontinuity\u003dtrue\u0026html5_log_rebuffer_events\u003d5\u0026html5_long_rebuffer_jiggle_cmt_delay_ms\u003d0\u0026html5_long_rebuffer_threshold_ms\u003d30000\u0026html5_manifestless_max_segment_history\u003d300\u0026html5_manifestless_media_source_duration\u003d25200\u0026html5_manifestless_seg_drift_limit_secs\u003d0\u0026html5_manifestless_unplugged\u003dtrue\u0026html5_manifestless_vp9\u003dtrue\u0026html5_manifestless_vp9_otf\u003dtrue\u0026html5_match_codecs_for_gapless\u003dtrue\u0026html5_max_drift_per_track_secs\u003d0.0\u0026html5_max_headm_for_streaming_xhr\u003d0\u0026html5_max_live_dvr_window_plus_margin_secs\u003d46800.0\u0026html5_max_readahead_bandwidth_cap\u003d0\u0026html5_max_readbehind_secs\u003d0\u0026html5_max_redirect_response_length\u003d8192\u0026html5_max_selectable_quality_ordinal\u003d0\u0026html5_maximum_readahead_seconds\u003d0.0\u0026html5_media_fullscreen\u003dtrue\u0026html5_mfl_extend_max_request_time\u003dtrue\u0026html5_min_has_advanced_secs\u003d0\u0026html5_min_has_advanced_secs_float\u003d0.0\u0026html5_min_readbehind_cap_secs\u003d60\u0026html5_min_readbehind_secs\u003d0\u0026html5_min_selectable_quality_ordinal\u003d0\u0026html5_min_startup_buffered_media_duration_secs\u003d1.2\u0026html5_minimum_readahead_seconds\u003d0.0\u0026html5_new_elem_on_hidden\u003dtrue\u0026html5_no_placeholder_rollbacks\u003dtrue\u0026html5_non_network_rebuffer_duration_ms\u003d0\u0026html5_nonblocking_media_capabilities\u003dtrue\u0026html5_not_register_disposables_when_core_listens\u003dtrue\u0026html5_not_vp9_supported_quality_cap\u003d0\u0026html5_offline_av1_fallback\u003dtrue\u0026html5_onesie_advance_redirector\u003dtrue\u0026html5_onesie_enable_server_side_badwidth_estimation\u003dtrue\u0026html5_onesie_faster_string_decode\u003dtrue\u0026html5_onesie_format_constraint\u003dtrue\u0026html5_onesie_ignore_innertube_api_key\u003dtrue\u0026html5_onesie_live_ttl_secs\u003d8\u0026html5_onesie_media_bytes\u003dtrue\u0026html5_onesie_only_send_clear_media\u003dtrue\u0026html5_onesie_por\u003dtrue\u0026html5_onesie_prewarm_interval_ms\u003d0\u0026html5_onesie_prewarm_max_lact_ms\u003d0\u0026html5_onesie_progress_timeout_ms\u003d0\u0026html5_onesie_server_initial_format_selection\u003dtrue\u0026html5_onesie_sticky_server_side\u003dtrue\u0026html5_onesie_use_media_promise\u003dtrue\u0026html5_pacf_enable_dai\u003dtrue\u0026html5_pause_on_nonforeground_platform_errors\u003dtrue\u0026html5_peak_shave\u003dtrue\u0026html5_perf_cap_override_sticky\u003dtrue\u0026html5_performance_cap_floor\u003d360\u0026html5_performance_impact_profiling_timer_ms\u003d0\u0026html5_perserve_av1_perf_cap\u003dtrue\u0026html5_platform_minimum_readahead_seconds\u003d0.0\u0026html5_platform_whitelisted_for_frame_accurate_seeks\u003dtrue\u0026html5_player_autonav_logging\u003dtrue\u0026html5_player_dynamic_bottom_gradient\u003dtrue\u0026html5_player_min_build_cl\u003d-1\u0026html5_populate_media_position_in_ad_break_request\u003dtrue\u0026html5_post_interrupt_readahead\u003d20\u0026html5_prefer_server_bwe3\u003dtrue\u0026html5_probe_live_using_range\u003dtrue\u0026html5_probe_primary_delay_base_ms\u003d0\u0026html5_process_all_encrypted_events\u003dtrue\u0026html5_qoe_intercept\u003d\u0026html5_qoe_user_intent_match_health\u003dtrue\u0026html5_quality_cap_min_age_secs\u003d0\u0026html5_random_playback_cap\u003d0\u0026html5_readahead_ratelimit\u003d3000\u0026html5_reattach_on_quota_exceeded\u003dtrue\u0026html5_recover_from_non_fatal_errors_in_player_bytes\u003dtrue\u0026html5_reload_element_long_rebuffer_delay_ms\u003d20000\u0026html5_remove_not_servable_check_killswitch\u003dtrue\u0026html5_report_slow_ads_as_error\u003dtrue\u0026html5_request_only_hdr_or_sdr_keys\u003dtrue\u0026html5_request_size_padding_secs\u003d3.0\u0026html5_request_sizing_multiplier\u003d0.8\u0026html5_reset_index_on_mismatch\u003dtrue\u0026html5_reset_resource_on_redirector_failure\u003dtrue\u0026html5_resource_bad_status_delay_scaling\u003d1.5\u0026html5_restrict_streaming_xhr_on_sqless_requests\u003dtrue\u0026html5_resume_streaming_requests\u003dtrue\u0026html5_rewrite_manifestless_for_continuity\u003dtrue\u0026html5_rewrite_manifestless_for_sync\u003dtrue\u0026html5_safari_desktop_eme_min_version\u003d0\u0026html5_seek_jiggle_cmt_delay_ms\u003d8000\u0026html5_seek_new_elem_delay_ms\u003d12000\u0026html5_seek_over_discontinuities\u003dtrue\u0026html5_seek_over_discontinuities_delay_ms\u003d0\u0026html5_seek_set_cmt_delay_ms\u003d2000\u0026html5_seek_timeout_delay_ms\u003d20000\u0026html5_send_drm_atv_device_type\u003dtrue\u0026html5_server_stitched_dai_decorated_url_retry_limit\u003d5\u0026html5_session_po_token_interval_time_ms\u003d0\u0026html5_set_ended_in_pfx_live\u003dtrue\u0026html5_signature_reload_refactor\u003dtrue\u0026html5_skip_slow_ad_delay_ms\u003d15000\u0026html5_slow_start_no_media_source_delay_ms\u003d0\u0026html5_slow_start_timeout_delay_ms\u003d20000\u0026html5_stack_trace_limit\u003d25\u0026html5_start_seconds_priority\u003dtrue\u0026html5_stateful_audio_min_adjustment_value\u003d0\u0026html5_static_abr_resolution_shelf\u003d0\u0026html5_sticky_reduces_discount_by\u003d0.0\u0026html5_stop_video_in_cancel_playback\u003dtrue\u0026html5_store_xhr_headers_readable\u003dtrue\u0026html5_subsegment_readahead_load_speed_check_interval\u003d0.5\u0026html5_subsegment_readahead_min_buffer_health_secs\u003d0.25\u0026html5_subsegment_readahead_min_buffer_health_secs_on_timeout\u003d0.1\u0026html5_subsegment_readahead_min_load_speed\u003d1.5\u0026html5_subsegment_readahead_seek_latency_fudge\u003d0.5\u0026html5_subsegment_readahead_target_buffer_health_secs\u003d0.5\u0026html5_subsegment_readahead_timeout_secs\u003d2.0\u0026html5_suspend_loader\u003dtrue\u0026html5_sync_seeking_state\u003dtrue\u0026html5_time_based_consolidation_ms\u003d10\u0026html5_unify_sqless_flow\u003dtrue\u0026html5_unreported_seek_reseek_delay_ms\u003d0\u0026html5_unrewrite_timestamps\u003dtrue\u0026html5_unstarted_buffering\u003dtrue\u0026html5_update_representation_init_boxes\u003dtrue\u0026html5_use_current_media_time_for_glrem_gllat\u003dtrue\u0026html5_use_multitag_webm_tags_parser\u003dtrue\u0026html5_user_intent_on_loading\u003dtrue\u0026html5_user_partitioned_ls\u003dtrue\u0026html5_varispeed_playback_rate\u003dtrue\u0026html5_video_tbd_min_kb\u003d0\u0026html5_viewport_undersend_maximum\u003d0.0\u0026html5_vp9_mime_full_range_flag\u003dtrue\u0026html5_vp9_new_mime\u003dtrue\u0026html5_woffle_resume\u003dtrue\u0026html5_wofflec\u003dtrue\u0026html5_workaround_delay_trigger\u003dtrue\u0026initial_gel_batch_timeout\u003d2000\u0026kevlar_autonav_miniplayer_fix\u003dtrue\u0026kevlar_command_handler_command_banlist\u003d[]\u0026kevlar_dropdown_fix\u003dtrue\u0026kevlar_frontend_video_list_actions\u003dtrue\u0026kevlar_gel_error_routing\u003dtrue\u0026kevlar_miniplayer\u003dtrue\u0026kevlar_miniplayer_expand_top\u003dtrue\u0026kevlar_miniplayer_play_pause_on_scrim\u003dtrue\u0026kevlar_playback_associated_queue\u003dtrue\u0026kevlar_queue_use_dedicated_list_type\u003dtrue\u0026kevlar_queue_use_update_api\u003dtrue\u0026leader_election_check_interval\u003d9000\u0026leader_election_lease_ttl\u003d10000\u0026leader_election_renewal_interval\u003d6000\u0026live_chunk_readahead\u003d3\u0026live_fresca_v2\u003dtrue\u0026log_web_endpoint_to_layer\u003dtrue\u0026log_window_onerror_fraction\u003d0.1\u0026manifestless_post_live\u003dtrue\u0026manifestless_post_live_ufph\u003dtrue\u0026max_resolution_for_white_noise\u003d360\u0026mdx_enable_privacy_disclosure_ui\u003dtrue\u0026mdx_load_cast_api_bootstrap_script\u003dtrue\u0026music_enable_shared_audio_tier_logic\u003dtrue\u0026mweb_c3_endscreen\u003dtrue\u0026mweb_enable_custom_control_shared\u003dtrue\u0026mweb_enable_skippables_on_jio_phone\u003dtrue\u0026mweb_muted_autoplay_animation\u003dshrink\u0026mweb_native_control_in_faux_fullscreen_shared\u003dtrue\u0026network_polling_interval\u003d30000\u0026new_codecs_string_api_uses_legacy_style\u003dtrue\u0026nwl_throttling_race_fix\u003dtrue\u0026nwl_trigger_throttle_after_reset\u003dtrue\u0026omit_innertube_api_key_for_bearer_auth_header\u003dtrue\u0026orchestration_use_cascading_delete\u003dtrue\u0026pageid_as_header_web\u003dtrue\u0026pes_aes_all\u003dtrue\u0026pes_migrate_association_data\u003dtrue\u0026playback_start_config_use_start_time\u003dtrue\u0026player_ads_set_adformat_on_client\u003dtrue\u0026player_allow_autonav_after_playlist\u003dtrue\u0026player_bootstrap_method\u003dtrue\u0026player_destroy_old_version\u003dtrue\u0026player_enable_playback_playlist_change\u003dtrue\u0026player_endscreen_ellipsis_fix\u003dtrue\u0026player_web_canary_stage\u003d0\u0026playready_first_play_expiration\u003d-1\u0026polymer_bad_build_labels\u003dtrue\u0026polymer_verifiy_app_state\u003dtrue\u0026preskip_button_style_ads_backend\u003d\u0026qoe_nwl_downloads\u003dtrue\u0026qoe_send_and_write\u003dtrue\u0026replace_playability_retriever_in_watch\u003dtrue\u0026screen_manager_log_servlet_ei\u003dtrue\u0026self_podding_header_string_template\u003dself_podding_interstitial_message\u0026self_podding_highlight_non_default_button\u003dtrue\u0026self_podding_midroll_choice_string_template\u003dself_podding_midroll_choice\u0026short_start_time_prefer_publish_in_watch_log\u003dtrue\u0026shorten_initial_gel_batch_timeout\u003dtrue\u0026skip_ad_button_with_thumbnail\u003dtrue\u0026state_machine_dynamic_events_lifecycles\u003dtrue\u0026streaming_data_emergency_itag_blacklist\u003d[]\u0026suppress_error_204_logging\u003dtrue\u0026tv_caption_performance_optimization\u003dtrue\u0026tvhtml5_disable_live_prefetch\u003dtrue\u0026tvhtml5_min_has_advanced_secs_float\u003d0.01\u0026tvhtml5_unplugged_preload_cache_size\u003d5\u0026unplugged_tvhtml5_botguard_attestation\u003dtrue\u0026unplugged_tvhtml5_video_preload_on_focus_delay_ms\u003d0\u0026use_document_lifecycles\u003dtrue\u0026use_flare_get_approved_stream_formats\u003dtrue\u0026use_inlined_player_rpc\u003dtrue\u0026use_remote_context_in_populate_remote_client_info\u003dtrue\u0026use_screen_manager_util\u003dtrue\u0026use_undefined_csn_any_layer\u003dtrue\u0026variable_buffer_timeout_ms\u003d0\u0026variable_playback_rate\u003dtrue\u0026vp9_drm_live\u003dtrue\u0026vss_final_ping_send_and_write\u003dtrue\u0026vss_playback_use_send_and_write\u003dtrue\u0026web_api_url\u003dtrue\u0026web_client_version_override\u003d\u0026web_csi_notification_ad_fix\u003dtrue\u0026web_dedupe_ve_grafting\u003dtrue\u0026web_enable_ad_signals_in_it_context\u003dtrue\u0026web_fetch_promise_cleanup_killswitch\u003dtrue\u0026web_foreground_heartbeat_interval_ms\u003d28000\u0026web_gel_debounce_ms\u003d10000\u0026web_gel_timeout_cap\u003dtrue\u0026web_logging_max_batch\u003d100\u0026web_op_continuation_type_banlist\u003d[]\u0026web_op_endpoint_banlist\u003d[]\u0026web_op_signal_type_banlist\u003d[]\u0026web_playback_associated_log_ctt\u003dtrue\u0026web_playback_associated_ve\u003dtrue\u0026web_player_api_logging_fraction\u003d0.01\u0026web_player_gvi_wexit_adunit\u003dtrue\u0026web_player_gvi_wexit_all_player_styles\u003dtrue\u0026web_player_gvi_wexit_embeds\u003dtrue\u0026web_player_gvi_wexit_living_room_bedrock\u003dtrue\u0026web_player_gvi_wexit_living_room_kids\u003dtrue\u0026web_player_gvi_wexit_living_room_other\u003dtrue\u0026web_player_gvi_wexit_living_room_pangea\u003dtrue\u0026web_player_gvi_wexit_living_room_simply\u003dtrue\u0026web_player_gvi_wexit_living_room_unplugged\u003dtrue\u0026web_player_gvi_wexit_mweb\u003dtrue\u0026web_player_gvi_wexit_other\u003dtrue\u0026web_player_gvi_wexit_web\u003dtrue\u0026web_player_i_see_captions\u003dtrue\u0026web_player_include_innertube_commands\u003dtrue\u0026web_player_inline_botguard\u003dtrue\u0026web_player_innertube_playlist_update\u003dtrue\u0026web_player_innertube_share_panel\u003dtrue\u0026web_player_ipp_canary_type_for_logging\u003d\u0026web_player_live_monitor_env\u003dtrue\u0026web_player_music_visualizer_treatment\u003dfake\u0026web_player_no_force_gvi\u003dtrue\u0026web_player_offline_state_logging\u003dtrue\u0026web_player_orchestration\u003dtrue\u0026web_player_response_playback_tracking_parsing\u003dtrue\u0026web_player_seek_chapters_by_shortcut\u003dtrue\u0026web_player_seek_loop_range_after_duration\u003dtrue\u0026web_player_sentinel_is_uniplayer\u003dtrue\u0026web_player_show_music_in_this_video_graphic\u003dvideo_thumbnail\u0026web_player_ss_dai_ad_fetching_timeout_ms\u003d15000\u0026web_player_ss_media_time_offset\u003dtrue\u0026web_player_ss_timeout_skip_ads\u003dtrue\u0026web_player_ssdai_hold_initial_qoe_ping_killswitch\u003dtrue\u0026web_player_touch_mode_improvements\u003dtrue\u0026web_player_transfer_timeout_threshold_ms\u003d10800000\u0026web_player_unset_default_csn_killswitch\u003dtrue\u0026web_player_vss_pageid_header\u003dtrue\u0026web_player_watch_next_response\u003dtrue\u0026web_player_watch_next_response_parsing\u003dtrue\u0026web_yt_config_context\u003dtrue\u0026woffle_relinquish_lock_on_inactivity\u003dtrue\u0026www_for_videostats\u003dtrue\u0026ytidb_is_supported_cache_success_result\u003dtrue\u0026ytidb_remake_db_retries\u003d1\u0026ytidb_reopen_db_retries\u003d1\u0026ytidb_stop_transaction_commit\u003dtrue\u0026ytidb_transaction_ended_event_rate_limit\u003d0.02",
+                    "startMuted": false,
+                    "enableMutedAutoplay": false,
+                    "mobileIphoneSupportsInlinePlayback": true,
+                    "isMobileDevice": false,
+                    "cspNonce": "ClbyMdfcK9HnpCTwyaNU5A",
+                    "canaryState": "none",
+                    "enableCsiLogging": true,
+                    "loaderUrl": "https://sites.google.com/",
+                    "disableAutonav": false,
+                    "isEmbed": true,
+                    "embedOptOutDeprecation": false,
+                    "pfpChazalUi": false,
+                    "disableCastApi": false,
+                    "disableMdxCast": false,
+                    "datasyncId": "pTJ4N7BE1p0||"
+                }
+            },
+            "XSRF_FIELD_NAME": "session_token",
+            "XSRF_TOKEN": "QUFFLUhqbU9HYnN1a1VWUm9qeVZZQjc3cFBvbEIwNEdGd3xBQ3Jtc0ttaUp6S3o2VXhvY0RFZmNmS1Y0VnZzYmJ6Nzh6VWVYT2dHWWNQN09ndlE5Q3JHVS1YbjNwbFh0THJaOWhNb0tUa1g2MG9aWDlXNzE2NkRqWG8tV3NlOXRjOERmd0xhdGxaWXFZSVJTTVdXR0NIMnl2RQ\u003d\u003d",
+            "SERVER_VERSION": "prod",
+            "DATASYNC_ID": "pTJ4N7BE1p0||",
+            "SERIALIZED_CLIENT_CONFIG_DATA": "CJuX7I0GELfLrQUQveutBRC7x_0SENvrrQUQkdetBRDYvq0F",
+            "ROOT_VE_TYPE": 16623,
+            "CLIENT_PROTOCOL": "h2",
+            "CLIENT_TRANSPORT": "quic",
+            "PLAYER_VARS": {
+                "embedded_player_response": "{\"responseContext\":{\"serviceTrackingParams\":[{\"service\":\"CSI\",\"params\":[{\"key\":\"c\",\"value\":\"WEB_EMBEDDED_PLAYER\"},{\"key\":\"cver\",\"value\":\"1.20211214.00.00\"},{\"key\":\"yt_li\",\"value\":\"0\"},{\"key\":\"GetEmbeddedPlayer_rid\",\"value\":\"0x3f831857ceb6df36\"}]},{\"service\":\"GFEEDBACK\",\"params\":[{\"key\":\"logged_in\",\"value\":\"0\"},{\"key\":\"country-type\",\"value\":\"B\"},{\"key\":\"e\",\"value\":\"24135288,24134152,24077266,24131025,24028143,1714252,24142940,23744176,24143428,39321475,23983296,23944779,24109689,24116735,24002025,24117476,24140247,24138442,24142596,24143411,23882685,24134463,24141079,23968386,24095695,24036948,23884386,24034168,23918597,24080738,24002022,24146886,24116717,24142470,24142226,23966208,24135236,24007790,23934970,24106839,24143789,24110902,23804281,23946420,24145076,24082661,24115641,24085811,24077241,24007246,24145515,24104858,23998056,24004644,24129402,24001373\"}]},{\"service\":\"GUIDED_HELP\",\"params\":[{\"key\":\"logged_in\",\"value\":\"0\"}]},{\"service\":\"ECATCHER\",\"params\":[{\"key\":\"client.version\",\"value\":\"20211214\"},{\"key\":\"client.name\",\"value\":\"WEB_EMBEDDED_PLAYER\"},{\"key\":\"client.fexp\",\"value\":\"24135288,24134152,24077266,24131025,24028143,1714252,24142940,23744176,24143428,39321475,23983296,23944779,24109689,24116735,24002025,24117476,24140247,24138442,24142596,24143411,23882685,24134463,24141079,23968386,24095695,24036948,23884386,24034168,23918597,24080738,24002022,24146886,24116717,24142470,24142226,23966208,24135236,24007790,23934970,24106839,24143789,24110902,23804281,23946420,24145076,24082661,24115641,24085811,24077241,24007246,24145515,24104858,23998056,24004644,24129402,24001373\"}]},{\"service\":\"BREAKPAD\",\"params\":[{\"key\":\"e\",\"value\":\"11234193,24145515,24142470,3343029,3344714,39805883,24117476,3343563,24143428,24115641,24140247,24142226,3341470,11236827,11231064,24104858,3344172,3344474,24036948,3313321,39321475,3341910,3300164,3300103,3340650,24142940,24141079,3342951,11232695\"},{\"key\":\"e2\",\"value\":\"24134152,24138064,24106839,3322191,3344338,24145076,24110902,24134913,24116735,24109931,24116717,11236797,3300132,3344004,24109689\"}]}]},\"embedPreview\":{\"thumbnailPreviewRenderer\":{\"title\":{\"runs\":[{\"text\":\"3D Animation: SARS-CoV-2 virus transmission leading to COVID-19\"}]},\"defaultThumbnail\":{\"thumbnails\":[{\"url\":\"https://i.ytimg.com/vi_webp/PSnSo9kYlH4/default.webp\",\"width\":120,\"height\":90},{\"url\":\"https://i.ytimg.com/vi/PSnSo9kYlH4/hqdefault.jpg?sqp\u003d-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ\u003d\u003d\\u0026rs\u003dAOn4CLAKT9H2L3xgjC96vACt4Ip0xTg69w\",\"width\":168,\"height\":94},{\"url\":\"https://i.ytimg.com/vi/PSnSo9kYlH4/hqdefault.jpg?sqp\u003d-oaymwEWCMQBEG5IWvKriqkDCQgBFQAAiEIYAQ\u003d\u003d\\u0026rs\u003dAOn4CLD8CKj4ICXKL2arWcKilpbki57jnA\",\"width\":196,\"height\":110},{\"url\":\"https://i.ytimg.com/vi/PSnSo9kYlH4/hqdefault.jpg?sqp\u003d-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE\u003d\\u0026rs\u003dAOn4CLBESZkJdGlWv5atijnG5m3DoTXbHQ\",\"width\":246,\"height\":138},{\"url\":\"https://i.ytimg.com/vi_webp/PSnSo9kYlH4/mqdefault.webp\",\"width\":320,\"height\":180},{\"url\":\"https://i.ytimg.com/vi/PSnSo9kYlH4/hqdefault.jpg?sqp\u003d-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE\u003d\\u0026rs\u003dAOn4CLBsCIm2_lBXJEDM1G0MDJ3KtMGS5g\",\"width\":336,\"height\":188},{\"url\":\"https://i.ytimg.com/vi_webp/PSnSo9kYlH4/hqdefault.webp\",\"width\":480,\"height\":360},{\"url\":\"https://i.ytimg.com/vi_webp/PSnSo9kYlH4/sddefault.webp\",\"width\":640,\"height\":480},{\"url\":\"https://i.ytimg.com/vi_webp/PSnSo9kYlH4/maxresdefault.webp\",\"width\":1920,\"height\":1080}]},\"playButton\":{\"buttonRenderer\":{\"style\":\"STYLE_DEFAULT\",\"size\":\"SIZE_DEFAULT\",\"isDisabled\":false,\"navigationEndpoint\":{\"clickTrackingParams\":\"CAcQ8FsiEwi43Yuvhej0AhVxQ50JHdczCtc\u003d\",\"watchEndpoint\":{\"videoId\":\"PSnSo9kYlH4\"}},\"accessibility\":{\"label\":\"Play 3D Animation: SARS-CoV-2 virus transmission leading to COVID-19\"},\"trackingParams\":\"CAcQ8FsiEwi43Yuvhej0AhVxQ50JHdczCtc\u003d\"}},\"videoDetails\":{\"embeddedPlayerOverlayVideoDetailsRenderer\":{\"channelThumbnail\":{\"thumbnails\":[{\"url\":\"https://yt3.ggpht.com/ytc/AKedOLRnjA1vhhO1p2r_HGDPXPbCj0jj0y8InOYcAjUmaw\u003ds68-c-k-c0x00ffffff-no-rj\",\"width\":68,\"height\":68}]},\"collapsedRenderer\":{\"embeddedPlayerOverlayVideoDetailsCollapsedRenderer\":{\"title\":{\"runs\":[{\"text\":\"3D Animation: SARS-CoV-2 virus transmission leading to COVID-19\",\"navigationEndpoint\":{\"clickTrackingParams\":\"CAYQ46ICIhMIuN2Lr4Xo9AIVcUOdCR3XMwrX\",\"urlEndpoint\":{\"url\":\"http://www.youtube.com/watch?v\u003dPSnSo9kYlH4\"}}}]},\"subtitle\":{\"runs\":[{\"text\":\"2.8M views • 1K comments\"}]},\"trackingParams\":\"CAYQ46ICIhMIuN2Lr4Xo9AIVcUOdCR3XMwrX\"}},\"expandedRenderer\":{\"embeddedPlayerOverlayVideoDetailsExpandedRenderer\":{\"title\":{\"runs\":[{\"text\":\"Nucleus Medical Media\"}]},\"subscribeButton\":{\"subscribeButtonRenderer\":{\"buttonText\":{\"runs\":[{\"text\":\"Subscribe\"}]},\"subscribed\":false,\"enabled\":true,\"type\":\"FREE\",\"channelId\":\"UC85VW73bQLEjs_taFKP7TwQ\",\"showPreferences\":false,\"subscribedButtonText\":{\"runs\":[{\"text\":\"Subscribed\"}]},\"unsubscribedButtonText\":{\"runs\":[{\"text\":\"Subscribe\"}]},\"trackingParams\":\"CAQQmysiEwi43Yuvhej0AhVxQ50JHdczCtcyCWl2LWVtYmVkcw\u003d\u003d\",\"unsubscribeButtonText\":{\"runs\":[{\"text\":\"Unsubscribe\"}]},\"serviceEndpoints\":[{\"clickTrackingParams\":\"CAQQmysiEwi43Yuvhej0AhVxQ50JHdczCtcyCWl2LWVtYmVkcw\u003d\u003d\",\"subscribeEndpoint\":{\"channelIds\":[\"UC85VW73bQLEjs_taFKP7TwQ\"],\"params\":\"EgIIBxgA\"}},{\"clickTrackingParams\":\"CAQQmysiEwi43Yuvhej0AhVxQ50JHdczCtcyCWl2LWVtYmVkcw\u003d\u003d\",\"unsubscribeEndpoint\":{\"channelIds\":[\"UC85VW73bQLEjs_taFKP7TwQ\"],\"params\":\"CgIIBxgA\"}}],\"notificationPreferenceToggleButton\":{\"toggleButtonRenderer\":{\"isToggled\":false,\"isDisabled\":false,\"defaultIcon\":{\"iconType\":\"CHANNEL_NOTIFICATION_PREFERENCE_OFF\"},\"defaultServiceEndpoint\":{\"clickTrackingParams\":\"CAUQmE0iEwi43Yuvhej0AhVxQ50JHdczCtcyHFBSRUZFUkVOQ0VfQUxMX05PVElGSUNBVElPTlM\u003d\",\"modifyChannelNotificationPreferenceEndpoint\":{\"params\":\"ChhVQzg1Vlc3M2JRTEVqc190YUZLUDdUd1ESAggCGAE%3D\"}},\"toggledIcon\":{\"iconType\":\"CHANNEL_NOTIFICATION_PREFERENCE_ON\"},\"toggledServiceEndpoint\":{\"clickTrackingParams\":\"CAUQmE0iEwi43Yuvhej0AhVxQ50JHdczCtcyElBSRUZFUkVOQ0VfREVGQVVMVA\u003d\u003d\",\"modifyChannelNotificationPreferenceEndpoint\":{\"params\":\"ChhVQzg1Vlc3M2JRTEVqc190YUZLUDdUd1ESAggBGAE%3D\"}},\"trackingParams\":\"CAUQmE0iEwi43Yuvhej0AhVxQ50JHdczCtc\u003d\",\"defaultTooltip\":\"Get notified about every new video\",\"toggledTooltip\":\"Stop getting notified about every new video\"}}}},\"subtitle\":{\"runs\":[{\"text\":\"4.58M subscribers\"}]},\"trackingParams\":\"CAMQ5KICIhMIuN2Lr4Xo9AIVcUOdCR3XMwrX\"}},\"channelThumbnailEndpoint\":{\"clickTrackingParams\":\"CAAQru4BIhMIuN2Lr4Xo9AIVcUOdCR3XMwrX\",\"channelThumbnailEndpoint\":{\"urlEndpoint\":{\"clickTrackingParams\":\"CAAQru4BIhMIuN2Lr4Xo9AIVcUOdCR3XMwrX\",\"urlEndpoint\":{\"url\":\"/channel/UC85VW73bQLEjs_taFKP7TwQ\"}}}}}},\"shareButton\":{\"buttonRenderer\":{\"style\":\"STYLE_OPACITY\",\"size\":\"SIZE_DEFAULT\",\"isDisabled\":false,\"text\":{\"runs\":[{\"text\":\"Share\"}]},\"icon\":{\"iconType\":\"SHARE_ARROW\"},\"navigationEndpoint\":{\"clickTrackingParams\":\"CAIQ-N8BIhMIuN2Lr4Xo9AIVcUOdCR3XMwrX\",\"shareVideoEndpoint\":{\"videoId\":\"PSnSo9kYlH4\",\"videoShareUrl\":\"https://youtu.be/PSnSo9kYlH4\",\"videoTitle\":\"3D Animation: SARS-CoV-2 virus transmission leading to COVID-19\"}},\"trackingParams\":\"CAIQ-N8BIhMIuN2Lr4Xo9AIVcUOdCR3XMwrX\"}},\"addToWatchLaterButton\":{\"buttonRenderer\":{\"style\":\"STYLE_OPACITY\",\"size\":\"SIZE_DEFAULT\",\"isDisabled\":false,\"text\":{\"runs\":[{\"text\":\"Watch later\"}]},\"serviceEndpoint\":{\"clickTrackingParams\":\"CAEQ-d8BIhMIuN2Lr4Xo9AIVcUOdCR3XMwrX\",\"playlistEditEndpoint\":{\"playlistId\":\"WL\",\"actions\":[{\"addedVideoId\":\"PSnSo9kYlH4\",\"action\":\"ACTION_ADD_VIDEO\"}]}},\"icon\":{\"iconType\":\"ADD_TO_WATCH_LATER\"},\"accessibility\":{\"label\":\"Saved to Watch later\"},\"trackingParams\":\"CAEQ-d8BIhMIuN2Lr4Xo9AIVcUOdCR3XMwrX\"}},\"videoDurationSeconds\":\"92\",\"webPlayerActionsPorting\":{\"getSharePanelCommand\":{\"clickTrackingParams\":\"CAAQru4BIhMIuN2Lr4Xo9AIVcUOdCR3XMwrX\",\"webPlayerShareEntityServiceEndpoint\":{\"serializedShareEntity\":\"CgtQU25TbzlrWWxINA%3D%3D\"}},\"subscribeCommand\":{\"clickTrackingParams\":\"CAAQru4BIhMIuN2Lr4Xo9AIVcUOdCR3XMwrX\",\"subscribeEndpoint\":{\"channelIds\":[\"UC85VW73bQLEjs_taFKP7TwQ\"],\"params\":\"EgIIBxgA\"}},\"unsubscribeCommand\":{\"clickTrackingParams\":\"CAAQru4BIhMIuN2Lr4Xo9AIVcUOdCR3XMwrX\",\"unsubscribeEndpoint\":{\"channelIds\":[\"UC85VW73bQLEjs_taFKP7TwQ\"],\"params\":\"CgIIBxgA\"}},\"addToWatchLaterCommand\":{\"clickTrackingParams\":\"CAAQru4BIhMIuN2Lr4Xo9AIVcUOdCR3XMwrX\",\"playlistEditEndpoint\":{\"playlistId\":\"WL\",\"actions\":[{\"addedVideoId\":\"PSnSo9kYlH4\",\"action\":\"ACTION_ADD_VIDEO\"}]}},\"removeFromWatchLaterCommand\":{\"clickTrackingParams\":\"CAAQru4BIhMIuN2Lr4Xo9AIVcUOdCR3XMwrX\",\"playlistEditEndpoint\":{\"playlistId\":\"WL\",\"actions\":[{\"action\":\"ACTION_REMOVE_VIDEO_BY_VIDEO_ID\",\"removedVideoId\":\"PSnSo9kYlH4\"}]}}}}},\"trackingParams\":\"CAAQru4BIhMIuN2Lr4Xo9AIVcUOdCR3XMwrX\",\"permissions\":{\"allowAdEvents\":false,\"allowImaMonetization\":false},\"attestation\":{\"playerAttestationRenderer\":{\"challenge\":\"a\u003d5\\u0026a2\u003d1\\u0026c\u003d1639648155\\u0026d\u003d56\\u0026e\u003dPSnSo9kYlH4\\u0026c1a\u003d1\\u0026c6a\u003d1\\u0026hh\u003d6gL_ChD22YXWsnc6EW6mP0oGn9BdYvHdgSTRKuJj7a8\",\"botguardData\":{\"program\":\"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\u003d\u003d\",\"interpreterSafeUrl\":{\"privateDoNotAccessOrElseTrustedResourceUrlWrappedValue\":\"//www.google.com/js/th/Cl7PG6JefISdvQ5f5DHlM2PydHOtKzDBOwJ_tmyY6lw.js\"},\"serverEnvironment\":1}}},\"videoFlags\":{\"playableInEmbed\":true,\"isCrawlable\":true},\"previewPlayabilityStatus\":{\"status\":\"OK\",\"playableInEmbed\":true,\"contextParams\":\"Q0FFU0FnZ0E\u003d\"}}",
+                "video_id": "PSnSo9kYlH4"
+            },
+            "POST_MESSAGE_ORIGIN": "*",
+            "VIDEO_ID": "PSnSo9kYlH4",
+            "DOMAIN_ADMIN_STATE": ""
+        });
+        window.ytcfg.obfuscatedData_ = [];
+    </script>
+    <script nonce="ClbyMdfcK9HnpCTwyaNU5A">
+        var yterr = yterr || true;
+    </script>
+    <script src="/s/player/f3c4e04d/www-embed-player.vflset/www-embed-player.js" nonce="ClbyMdfcK9HnpCTwyaNU5A"></script>
+    <script src="/s/player/f3c4e04d/player_ias.vflset/en_US/base.js" nonce="ClbyMdfcK9HnpCTwyaNU5A"></script>
+    <script src="/s/player/f3c4e04d/fetch-polyfill.vflset/fetch-polyfill.js" nonce="ClbyMdfcK9HnpCTwyaNU5A"></script>
+    <title>YouTube</title>
+    <link rel="canonical" href="https://www.youtube.com/watch?v=PSnSo9kYlH4">
+</head>
+
+<body class="date-20211216 en_US ltr  site-center-aligned site-as-giant-card webkit webkit-537" dir="ltr">
+    <div id="player"></div>
+    <script nonce="ClbyMdfcK9HnpCTwyaNU5A">
+        writeEmbed();
+    </script>
+    <script nonce="ClbyMdfcK9HnpCTwyaNU5A">
+        ytcsi.info('st', 40.0);
+    </script><noscript><div class="player-unavailable"><h1 class="message">An error occurred.</h1><div class="submessage"><a href="https://www.youtube.com/watch?v=PSnSo9kYlH4" target="_blank">Try watching this video on www.youtube.com</a>, or enable JavaScript if it is disabled in your browser.</div></div></noscript></body>
+
+</html>

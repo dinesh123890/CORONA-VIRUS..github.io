@@ -1,0 +1,76 @@
+Uri: https://sites.google.com/view/world-fights-covid-19/home?authuser=0
+File Name: C:\Users\Dinesh\OneDrive\Desktop\google\sites.google.com\view\world-fights-covid-19\home-1.html
+Content Type: text/html
+
+Uri: https://lh4.googleusercontent.com/ov0mDubeyifhBUtnAhwyuBmOFCuKqJWeRa90r2A9gJuh7ncnK1E-wUT6bNfqGteRraOsHYA0SLveoXPmzfho5KA=w16383
+File Name: C:\Users\Dinesh\OneDrive\Desktop\google\sites.google.com\ov0mDubeyifhBUtnAhwyuBmOFCuKqJWeRa90r2A9gJuh7ncnK1E-wUT6bNfqGteRraOsHYA0SLveoXPmzfho5KA=w16383.png
+Content Type: image/png
+
+Uri: https://ssl.gstatic.com/atari/images/simple-header-blended-small.png
+File Name: C:\Users\Dinesh\OneDrive\Desktop\google\sites.google.com\atari\images\simple-header-blended-small.png
+Content Type: image/png
+
+Uri: https://ssl.gstatic.com/atari/images/public/favicon.ico
+File Name: C:\Users\Dinesh\OneDrive\Desktop\google\sites.google.com\atari\images\public\favicon.ico
+Content Type: image/x-icon
+
+Uri: https://fonts.googleapis.com/css?family=PT Sans:400%2C700|Merriweather:400%2C700&display=swap
+File Name: C:\Users\Dinesh\OneDrive\Desktop\google\sites.google.com\css.css
+Content Type: text/css
+
+Uri: https://fonts.googleapis.com/css?family=Google+Sans_old:400,500|Roboto:300,400,500,700|Source+Code+Pro:400,700&display=swap
+File Name: C:\Users\Dinesh\OneDrive\Desktop\google\sites.google.com\css-1.css
+Content Type: text/css
+
+Uri: https://fonts.googleapis.com/css?family=Roboto:i%2Cbi%2C700%2C400&display=swap
+File Name: C:\Users\Dinesh\OneDrive\Desktop\google\sites.google.com\css-2.css
+Content Type: text/css
+
+Uri: https://www.gstatic.com/_/atari/_/ss/k=atari.vw.BA9zGM_xdIU.L.X.O/d=1/rs=AGEqA5lTIoY9rUT_FYkQexAXTrHKyz8nZA
+File Name: C:\Users\Dinesh\OneDrive\Desktop\google\sites.google.com\_\atari\_\ss\k=atari.vw.BA9zGM_xdIU.L.X.O\d=1\rs=AGEqA5lTIoY9rUT_FYkQexAXTrHKyz8nZA.css
+Content Type: text/css
+
+Uri: https://sites.google.com/view/world-fights-covid-19/home
+File Name: C:\Users\Dinesh\OneDrive\Desktop\google\sites.google.com\view\world-fights-covid-19\home-2.html
+Content Type: text/html
+
+Uri: https://www.google.com/url?q=https:%2F%2Fwww.ecdc.europa.eu%2Fen%2Fpublications-data%2Finfographic-non-pharmaceutical-measures&sa=D&sntz=1&usg=AFQjCNHZgiJLae7UjYUxToJ4Pix0s_HY2A
+File Name: C:\Users\Dinesh\OneDrive\Desktop\google\sites.google.com\url.html
+Content Type: text/html
+
+Uri: https://www.google.com/url?q=https:%2F%2Fwww.ema.europa.eu%2Fen%2Fhuman-regulatory%2Foverview%2Fpublic-health-threats%2Fcoronavirus-disease-covid-19%2Ftreatments-vaccines-covid-19&sa=D&sntz=1&usg=AFQjCNGRxWvNaUszppZzsdG8VG-B-Q3Xkg
+File Name: C:\Users\Dinesh\OneDrive\Desktop\google\sites.google.com\url-1.html
+Content Type: text/html
+
+Uri: https://apis.google.com/js/client.js?onload=gapiLoaded
+File Name: C:\Users\Dinesh\OneDrive\Desktop\google\sites.google.com\js\client.js
+Content Type: application/javascript
+
+Uri: https://lh5.googleusercontent.com/jGQRCu2RT8RyWrFoAFKZk9WInLk2OR8kobWDKUoiGfjzyB1zN8yAEkrLKI0MIeh2LQovizQpKSpfFW2kEb1tHEE=w16383
+File Name: C:\Users\Dinesh\OneDrive\Desktop\google\sites.google.com\jGQRCu2RT8RyWrFoAFKZk9WInLk2OR8kobWDKUoiGfjzyB1zN8yAEkrLKI0MIeh2LQovizQpKSpfFW2kEb1tHEE=w16383.png
+Content Type: image/png
+
+Uri: https://lh5.googleusercontent.com/Cd-lVVT-V4uvq71z9XWr3A9Nclx1DbJxndBY91sYJzWxHmZFPqWm3ymklTpajh2t4kK4K7lYWG-0tF0OyAdXsXgSSBPeHmYy8BVw-T9rsyNtUjfbM35koRT4uHFiC2TdYg=w1280
+File Name: C:\Users\Dinesh\OneDrive\Desktop\google\sites.google.com\Cd-lVVT-V4uvq71z9XWr3A9Nclx1DbJxndBY91sYJzWxHmZFPqWm3ymklTpajh2t4kK4K7lYWG-0tF0OyAdXsXgSSBPeHmYy8BVw-T9rsyNtUjfbM35koRT4uHFiC2TdYg=w1280.png
+Content Type: image/png
+
+Uri: https://lh4.googleusercontent.com/xiBBKcHwfvw8ybscFa9G_mDQ3VTPwitZyfLKLZq_YepWFZn_I0z5M6MoL8Igf1DoHG8H7IYPXoiDh931wS3t73-mlgQ4SeQf5ctQt5pdsHFRPC5p7ii-nJf-uu0AC-JUqA=w1280
+File Name: C:\Users\Dinesh\OneDrive\Desktop\google\sites.google.com\xiBBKcHwfvw8ybscFa9G_mDQ3VTPwitZyfLKLZq_YepWFZn_I0z5M6MoL8Igf1DoHG8H7IYPXoiDh931wS3t73-mlgQ4SeQf5ctQt5pdsHFRPC5p7ii-nJf-uu0AC-JUqA=w1280.png
+Content Type: image/png
+
+Uri: https://lh6.googleusercontent.com/uUlNh1uS47AC36qgMoP9vBSzK4aZBbVSX9Q83Dz-rbjjvchkH-Eldby0GJWboj7Yrfy9TL_SJgNdbPjMoILW55oIXYRtY8hw7Bsg5X6r2K0g1aGV_5o6akS4JpvS2cKhkQ=w1280
+File Name: C:\Users\Dinesh\OneDrive\Desktop\google\sites.google.com\uUlNh1uS47AC36qgMoP9vBSzK4aZBbVSX9Q83Dz-rbjjvchkH-Eldby0GJWboj7Yrfy9TL_SJgNdbPjMoILW55oIXYRtY8hw7Bsg5X6r2K0g1aGV_5o6akS4JpvS2cKhkQ=w1280.jpeg
+Content Type: image/jpeg
+
+Uri: https://lh6.googleusercontent.com/z4MisY0jvjXgC5QuKZY8dj8UhSndtBeN3hsxyeM1uxd5cc_HEd49AjjX2Y0a8fwELUu73N-8OKWUrlIiP_zawEzBLoLI-PiM2vnSy8EwdoerU9_86av3ztn8timIV_X_kA=w1280
+File Name: C:\Users\Dinesh\OneDrive\Desktop\google\sites.google.com\z4MisY0jvjXgC5QuKZY8dj8UhSndtBeN3hsxyeM1uxd5cc_HEd49AjjX2Y0a8fwELUu73N-8OKWUrlIiP_zawEzBLoLI-PiM2vnSy8EwdoerU9_86av3ztn8timIV_X_kA=w1280.png
+Content Type: image/png
+
+Uri: https://www.youtube.com/embed/PSnSo9kYlH4
+File Name: C:\Users\Dinesh\OneDrive\Desktop\google\sites.google.com\embed\PSnSo9kYlH4.html
+Content Type: text/html
+
+Uri: https://www.gstatic.com/_/atari/_/js/k=atari.vw.en_US.bKkZcXqkDs8.O/d=1/rs=AGEqA5kOaEb8_Gqiwp8SNrOBR767eD4mAA/m=view
+File Name: C:\Users\Dinesh\OneDrive\Desktop\google\sites.google.com\_\atari\_\js\k=atari.vw.en_US.bKkZcXqkDs8.O\d=1\rs=AGEqA5kOaEb8_Gqiwp8SNrOBR767eD4mAA\m=view
+Content Type: text/javascript
+
